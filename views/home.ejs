@@ -1,0 +1,18 @@
+<%- include("partials/header");-%>
+
+<h1>Home</h1>
+<p><%= homecontent%></p>
+
+
+<% posts.forEach(function(post){ %>
+  <div class="containerDelete">
+    <h1><%=post.title%>
+    <form class="" action="/delete" method="post">
+      <button type="submit" class="btn btn-outline-warning" name="delete" value="<%=post._id%>">DELETE</button></h1>
+    </form>
+  </div>
+
+<p><%=post.content.substring(0,100)+"..."%><a href="/posts/<%=post._id%>">Read More</a></p>
+<% }) %>
+
+<%- include("partials/footer")-%>
